@@ -11,6 +11,7 @@ import UIKit
 class PhotosViewController: UIViewController {
     
     // fix some bugs here
+    // temporary comment
 
     override func viewDidLoad() {
         super.viewDidLoad()

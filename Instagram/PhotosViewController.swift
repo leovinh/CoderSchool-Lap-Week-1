@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import AFNetworking
 
-class PhotosViewController: UIViewController {
+class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // fix some bugs here
     // temporary comment
-
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    // let data:NSDictionary?
+    
+    var data : [NSDictionary]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.rowHeight = 320;
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         
         let clientId = "e05c462ebd86446ea48a5af73769b602"
         let url = NSURL(string:"https://api.instagram.com/v1/media/popular?client_id=\(clientId)")
@@ -32,6 +46,10 @@ class PhotosViewController: UIViewController {
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                         data, options:[]) as? NSDictionary {
                             NSLog("response: \(responseDictionary)")
+                            
+                            self.data = responseDictionary["data"] as? [NSDictionary]
+                            self.tableView.reloadData()
+                            
                     }
                 }
         });
@@ -41,6 +59,33 @@ class PhotosViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as! TableViewCell
+        
+        let insta = data![indexPath.row]
+        let name = insta["user"] as! String!
+        
+        
+        cell.lblName!.text = name
+        
+        
+        
+        return cell
+        
+        
+        
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if let data = data {
+            return data.count
+            
+        } else {
+            return 0
+        }
     }
 
 

@@ -13,6 +13,7 @@
 		B495400B1C904BD3000CD9DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49540091C904BD3000CD9DD /* Main.storyboard */; };
 		B495400D1C904BD3000CD9DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B495400C1C904BD3000CD9DD /* Assets.xcassets */; };
 		B49540101C904BD3000CD9DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B495400E1C904BD3000CD9DD /* LaunchScreen.storyboard */; };
+		B4CACE091C9B3EBC002C49DB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CACE081C9B3EBC002C49DB /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B495400C1C904BD3000CD9DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B495400F1C904BD3000CD9DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B49540111C904BD3000CD9DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4CACE081C9B3EBC002C49DB /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				B495400C1C904BD3000CD9DD /* Assets.xcassets */,
 				B495400E1C904BD3000CD9DD /* LaunchScreen.storyboard */,
 				B49540111C904BD3000CD9DD /* Info.plist */,
+				B4CACE081C9B3EBC002C49DB /* TableViewCell.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4CACE091C9B3EBC002C49DB /* TableViewCell.swift in Sources */,
 				B49540081C904BD2000CD9DD /* PhotosViewController.swift in Sources */,
 				B49540061C904BD2000CD9DD /* AppDelegate.swift in Sources */,
 			);
